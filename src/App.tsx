@@ -5,7 +5,7 @@ import { Toaster } from "sonner";
 import ProtectedRoute from "./layouts/ProtectedLayout";
 import NotAuthorized from "./features/error/pages/NotAuthorized";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import LoginPenerimaBeasiswaPage from "./features/Auth/pages/LoginPenerimaBeasiswaPage";
+// import LoginPenerimaBeasiswaPage from "./features/Auth/pages/LoginPenerimaBeasiswaPage";
 import RegisterPenerimaBeasiswaPage from "./features/Auth/pages/RegisterPenerimaBeasiswaPage";
 import HomePage from "./features/home/pages/HomePage";
 import DashboardPage from "./features/dashboard/pages/DashboardPage";
@@ -50,7 +50,7 @@ import MahasiswaListPksPage from "./features/mahasiswa-pks/pages/MahasiswaPksLis
 import KeuanganEditPage from "./features/keuangan/pages/KeuanganEditPage";
 import DbAdminVerifikatorEditPage from "./features/db-admin-verifikator/pages/DbAdminVerifikatorEditPage";
 import DbAdminVerifikatorDinasEditPage from "./features/db-admin-verifikator-dinas/pages/DbAdminVerifikatorDinasEditPage";
-import LandingPageAlt from "./features/landing-alt/pages/LandingPageAlt";
+// import LandingPageAlt from "./features/landing-alt/pages/LandingPageAlt";
 import PendaftaranBeasiswa from "./features/landing-alt/pages/PendaftaranBeasiswa";
 import LoginInstansiPage from "./features/Auth/pages/LoginInstansiPage";
 import PerguruanTinggiPage from "./features/perguruan-tinggi/pages/PerguruanTinggiPage";
@@ -91,6 +91,7 @@ import ResetPinPage from "./features/Auth/pages/ResetPinPage";
 import ManagamentVerifikator from "./features/list-pendaftar/pages/ManagamentVerifikators";
 import PembagianWilayahPage from "./features/pembagian-wilayah/pages/PembagianWilayahPage";
 import PembagianWilayahDetailPage from "./features/pembagian-wilayah/pages/PembagianWilayahDetailPage";
+import RankingPage from "@/features/ranking/pages/RankingPage";
 
 const queryClient = new QueryClient();
 
@@ -102,7 +103,8 @@ function App() {
           <Route element={<BaseLayout />}>
             {/* <Route path="/" element={<LandingPage />} />
             <Route path="/tentang/kontak" element={<TentangKontakPage />} /> */}
-            <Route path="/" element={<LandingPageAlt />} />
+            {/* <Route path="/" element={<LandingPageAlt />} /> */}
+            <Route path="/" element={<LoginInstansiPage />} />
             <Route
               path="/pendaftaran-beasiswa"
               element={<PendaftaranBeasiswa />}
@@ -111,8 +113,7 @@ function App() {
 
           {/* Routes dengan BaseLayout */}
           <Route element={<BaseLayout />}>
-            <Route path="/login" element={<LoginPenerimaBeasiswaPage />} />
-            <Route path="/login-instansi" element={<LoginInstansiPage />} />
+            {/* <Route path="/login" element={<LoginPenerimaBeasiswaPage />} /> */}
             <Route path="/reset-pin/:id/:token" element={<ResetPinPage />} />
             <Route
               path="/daftar-penerima-beasiswa"
@@ -144,6 +145,7 @@ function App() {
               <Route path="/profile" element={<ProfilePage />} />
               <Route path="/pembagian_wilayah" element={<PembagianWilayahPage />} />
               <Route path="/pembagian_wilayah/:kodeKab" element={<PembagianWilayahDetailPage />} />
+              <Route path="/ranking" element={<RankingPage />} />
               <Route
                 path="/master/perguruan-tinggi"
                 element={<PerguruanTinggiPage />}

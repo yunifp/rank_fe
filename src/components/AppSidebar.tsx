@@ -1,7 +1,7 @@
 import { Sidebar, SidebarContent, SidebarMenu } from "@/components/ui/sidebar";
-
 import { useMenuStore } from "@/stores/menuStore";
 import RenderSidebarItems from "./RenderSidebarItems";
+import { Trophy } from "lucide-react";
 
 const AppSidebar = () => {
   const items = useMenuStore((state) => state.menus);
@@ -10,28 +10,21 @@ const AppSidebar = () => {
 
   return (
     <Sidebar>
-      <SidebarContent
-        className="relative bg-cover bg-center font-inter"
-        style={{ backgroundImage: "url('/images/sawit.jpg')" }}>
-        {/* overlay hitam transparan */}
-        <div className="absolute inset-0 bg-black/50 z-0" />
-
-        {/* konten sidebar */}
-        <div className="relative z-10">
-          <div className="p-4 flex items-center justify-center">
-            <div className="bg-white shadow-sm rounded-lg p-3">
-              <img
-                src="/images/Ditjenbun.png"
-                alt="Brand Logo"
-                className="h-18 w-auto"
-              />
-            </div>
+      <SidebarContent className="bg-white border-r border-slate-200 font-inter shadow-sm">
+        {/* Header / Brand Name dengan Logo */}
+        <div className="p-6 flex items-center justify-start gap-3 border-b border-slate-100 mb-4 px-6">
+          <div className="bg-emerald-800 p-2 rounded-lg shadow-sm">
+            <Trophy className="w-6 h-6 text-white" />
           </div>
-
-          <SidebarMenu>
-            <RenderSidebarItems items={mergedItems} />
-          </SidebarMenu>
+          <h1 className="text-2xl font-black text-emerald-800 tracking-wider uppercase">
+            RANKING
+          </h1>
         </div>
+
+        {/* Sidebar Navigation */}
+        <SidebarMenu className="px-2">
+          <RenderSidebarItems items={mergedItems} />
+        </SidebarMenu>
       </SidebarContent>
     </Sidebar>
   );

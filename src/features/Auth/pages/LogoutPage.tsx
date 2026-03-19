@@ -23,7 +23,7 @@ const LogoutPage = () => {
       if (isPenerimaBeasiswa) {
         navigate("/login", { replace: true });
       } else {
-        navigate("/login-instansi", { replace: true });
+        navigate("/", { replace: true });
       }
     }, 0);
   }, [logout, navigate, queryClient]); // jangan taruh user di sini
