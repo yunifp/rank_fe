@@ -92,6 +92,8 @@ import ManagamentVerifikator from "./features/list-pendaftar/pages/ManagamentVer
 import PembagianWilayahPage from "./features/pembagian-wilayah/pages/PembagianWilayahPage";
 import PembagianWilayahDetailPage from "./features/pembagian-wilayah/pages/PembagianWilayahDetailPage";
 import RankingPage from "@/features/ranking/pages/RankingPage";
+import MasterRankingPage from "./features/ranking/pages/MasterRankingPage";
+import SisaKuotaPage from "./features/ranking/pages/SisaKuotaPage";
 
 const queryClient = new QueryClient();
 
@@ -146,6 +148,8 @@ function App() {
               <Route path="/pembagian_wilayah" element={<PembagianWilayahPage />} />
               <Route path="/pembagian_wilayah/:kodeKab" element={<PembagianWilayahDetailPage />} />
               <Route path="/ranking" element={<RankingPage />} />
+              <Route path="/ranking/ranking-database" element={<MasterRankingPage />} />
+              <Route path="/ranking/ranking-kuota" element={<SisaKuotaPage />} />
               <Route
                 path="/master/perguruan-tinggi"
                 element={<PerguruanTinggiPage />}
